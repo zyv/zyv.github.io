@@ -1,49 +1,31 @@
-\documentclass[12pt,a4paper]{article}
+---
+layout: post
+title: Installing Oracle Solaris 10 on Sun Blade 1000
+---
 
-\usepackage{cmap}
-\usepackage[utf8]{inputenc}
-\usepackage[english]{babel}
-\usepackage{lmodern}
-\usepackage[pdftex]{hyperref}
-
-\hypersetup{
-    colorlinks,
-    citecolor=blue,
-    filecolor=blue,
-    linkcolor=blue,
-    urlcolor=blue
-}
-
-\usepackage{caption}
-
-\title{Installing Oracle Solaris 10 on Sun Blade 1000}
-\author{Yury V. Zaytsev}
-\date{\today}
-
-\begin{document}
-
-\section*{Installing Oracle Solaris 10 on Sun Blade 1000}
-
-\section{Introduction}
+Introduction
+------------
 
 So, you are a happy owner that wants to get latest and greatest Oracle Solaris running on a legendary Sun Blade 1000 workstation with glorious double UltraSPARC III CPUs and a fair 1 Gb of RAM? Follow on!
 
-\section{Hardware requirements}
+Hardware requirements
+---------------------
 
-\begin{itemize}
+*   Check the version of OpenBoot firmware that your blade is equipped with. There is a known issue with OpenBoot 4.2 which prevents the workstations, having Toshiba DVD-ROM installed from booting from DVD media.
 
-	\item Check the version of OpenBoot firmware that your blade is equipped with. There's a known issue with OpenBoot 4.2 which prevents the workstations, having Toshiba DVD-ROM installed from booting from DVD media.
+    This is a highly annoying problem. In general, two kinds of advices can be found on the Internets:
 
-This is a highly annoying problem. In general, two kinds of advices can be found on the net.
+    - Find another DVD drive, replace the built-in Toshiba drive with a new one and hope that it will work. I have not tested this suggestion, but it might work for you.
 
-	\begin{itemize}
+    - Find the latest firmware upgrade, re-flash the firmware and re-install the OS.
 
-		\item Find another DVD drive, replace the built-in Toshiba drive with a new one and hope that it will work. I have not tested this suggestion, but it might work for you.
+* Graphics
 
-		\item Find the latest firmware upgrade 
+Re-flashing the firmware
+------------------------
 
-	\end{itemize}
+Initially, I did not have a 
 
-\end{itemize}
+111292-17.zip
 
-\end{document}
+
