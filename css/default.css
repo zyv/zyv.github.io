@@ -1,0 +1,17 @@
+body {
+
+    margin: 0;
+    padding: 0cm 2cm 1cm 2cm;
+
+    font-family: Times, Times New Roman, Georgia, serif;
+    font-size: 18pt;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+}
+
+a {
+    color: black;
+}
