@@ -41,12 +41,12 @@ Now, international passports are only valid for 5 years from the date of issue. 
 
 In Germany, apparently, the consulate in Berlin does handle such inquiries, but as a Russian citizen, one is not allowed to come to *any* Russian consulate in the foreign country of residence. One is only permitted to address to a specific consulate which is responsible for the particular area of residence, i.e. for Baden-Württenberg this would be the one in Frankfurt am Main. Of course, coincidentally, they make it very clear on their web page that they would not deliver any biometric passports yet (as of February 2011).
 
-So, what the hell, let's go for a "normal" one and after just 3 month of waiting time it is ready to be picked up (of course, only in person)! After spending around one hour outside in the queue among angry retired immigrants I finally made it inside.
+So, what the hell, let us go for a "normal" one and after just 3 month of waiting time it is ready to be picked up (of course, only in person)! After spending around one hour outside in the queue among angry retired immigrants I finally made it inside.
 
 Good news is that nowadays, under the pressure from population a new service has been introduced: for a modest fee of 7.5 € you can get a stamp in your passport with your name transcribed according to the desired transliteration scheme.
 
 Oh, wait, bummer! You can not see the passport before you request the stamp. Still, I was assuming that I need "French" transliteration, because it seemed obvious to me that they were to reissue a passport with the extra "i" I needed to get rid of. However, under the tireless lead of President Medvedev's, apparently, the software doing the transliteration was "modernized" yet again and now, somehow, it generates names transliterated à la Française! So basically I paid for nothing...
 
-Luckily, after some bargain the clerk agreed to cancel the stamp and make another one with my name transcribed as in the old passport, so finally I have both names on file and I don't have to redo all the documents again. After all, they are all human, maybe just spoiled a little bit by the housing problem.
+Luckily, after some bargain the clerk agreed to cancel the stamp and make another one with my name transcribed as in the old passport, so finally I have both names on file and hopefully do not have to redo all the documents again. After all, they are all human, maybe just spoiled a little bit by the housing problem.
 
 As a conclusion, I admit that obviously the government knows better how I would prefer to be called, but in my humble opinion just a tiny bit of consistency would definitively not hurt!
