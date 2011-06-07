@@ -13,7 +13,7 @@ The views expressed on this page are entirely of my own and do not reflect the o
 Recent press releases
 ---------------------
 
-<ul class="posts">
+<ul class="posts-list">
     {% for post in site.posts %}
         <li><span>{{ post.date | date_to_string }}</span> &ndash; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}

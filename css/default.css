@@ -1,17 +1,48 @@
-body {
+html, body, ul, ol, li, form, fieldset, legend {
 
     margin: 0;
-    padding: 0cm 2cm 1cm 2cm;
+    padding: 0;
 
-    font-family: Times, Times New Roman, Georgia, serif;
+}
+
+ul, ol {
+    margin: 1em 0 1em 2em;
+}
+
+body {
+
+    /*
+    http://www.codestyle.org/servlets/FontStack?stack=Times+New+Roman%2CNimbus+Roman+No9+L%2CTimes%2CLiberation+Serif&generic=serif&x=4&y=7
+    */
+    font-family: "Times New Roman",
+            "Nimbus Roman No9 L",
+             Times,
+             "Liberation Serif",
+             serif;
+
     font-size: 18pt;
 
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+
+    /*
+    http://www.codestyle.org/servlets/FontStack?stack=Palatino%20Linotype,Palatino,Book%20Antiqua,URW%20Palladio%20L,Georgia&generic=serif
+    */
+    font-family: "Palatino Linotype",
+             Palatino,
+             "Book Antiqua",
+             "URW Palladio L",
+             Georgia,
+             serif;
+
 }
 
 a {
-    color: black;
+    color: #00008F;
+}
+
+.content {
+    width: 37em;
+    margin: auto;
 }
