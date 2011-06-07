@@ -1,0 +1,33 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+    <title>Yury V. Zaytsev</title>
+
+    <link href="http://yury.zaytsev.net/" />
+    <link href="http://yury.zaytsev.net/atom.xml" type="application/atom+xml" rel="self"/>
+
+    <updated>{{ site.time | date_to_xmlschema }}</updated>
+    <id>http://yury.zaytsev.net/</id>
+    <author>
+        <name>Yury V. Zaytsev</name>
+        <email>yury@shurup.com</email>
+    </author>
+
+    {% for post in site.posts %}
+    <entry>
+        <id>http://yury.zaytsev.net{{ post.id }}</id>
+        <title>{{ post.title }}</title>
+        <author>
+            <name>Yury V. Zaytsev</name>
+            <uri>http://yury.zaytsev.net/</uri>
+        </author>
+        <link href="http://yury.zaytsev.net{{ post.url }}" type="text/html" />
+        <updated>{{ post.date | date_to_xmlschema }}</updated>
+        <content type="html">{{ post.content | xml_escape }}</content>
+    </entry>
+    {% endfor %}
+
+</feed>

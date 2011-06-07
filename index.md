@@ -10,8 +10,7 @@ I am working on a doctorate in computational neurosciences, graduated from a phy
 
 The views expressed on this page are entirely of my own and do not reflect the official position of my employer, relatives, acquaintances et cetera.
 
-Recent press releases
----------------------
+<h2 class="feed-link"><a href="/atom.xml" title="Atom Feed" class="feed-href">Recent press releases</a></h2>
 
 ### Geekery and technicalities
 
