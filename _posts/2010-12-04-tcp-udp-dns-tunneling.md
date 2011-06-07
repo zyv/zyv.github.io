@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Tunneling TCP over UDP (DNS in particular)
+categories:
+- tech
 ---
 
 Introduction

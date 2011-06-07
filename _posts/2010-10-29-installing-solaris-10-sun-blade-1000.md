@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Installing Oracle Solaris 10 on Sun Blade 1000
+categories:
+- tech
+- solaris
 ---
 
 Introduction

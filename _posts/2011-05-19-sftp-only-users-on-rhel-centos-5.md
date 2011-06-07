@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Setting up SFTP-only users on RHEL/CentOS 5
+categories:
+- tech
 ---
 
 Introduction

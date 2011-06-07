@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Updating firmware on Dell PowerEdge R710
+categories:
+- tech
+- dell
 ---
 
 Introduction

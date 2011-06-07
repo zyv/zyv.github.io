@@ -13,8 +13,18 @@ The views expressed on this page are entirely of my own and do not reflect the o
 Recent press releases
 ---------------------
 
+### Geekery and technicalities
+
 <ul class="posts-list">
-    {% for post in site.posts %}
+    {% for post in site.categories.tech %}
+        <li><span>{{ post.date | date_to_string }}</span> &ndash; <a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+
+### Miscellanea
+
+<ul class="posts-list">
+    {% for post in site.categories.misc %}
         <li><span>{{ post.date | date_to_string }}</span> &ndash; <a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
 </ul>

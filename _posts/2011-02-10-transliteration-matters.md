@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Transliteration matters!
+categories:
+- misc
 ---
 
 Prelude
