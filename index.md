@@ -17,7 +17,7 @@ Recent press releases
 
 <ul class="posts-list">
     {% for post in site.categories.tech %}
-        <li><span>{{ post.date | date_to_string }}</span> &ndash; <a href="{{ post.url }}">{{ post.title }}</a></li>
+        <li><a href="{{ post.url }}">{{ post.title }}</a> <span>({{ post.date | date_to_long_string }})</span></li>
     {% endfor %}
 </ul>
 
@@ -25,7 +25,7 @@ Recent press releases
 
 <ul class="posts-list">
     {% for post in site.categories.misc %}
-        <li><span>{{ post.date | date_to_string }}</span> &ndash; <a href="{{ post.url }}">{{ post.title }}</a></li>
+        <li><a href="{{ post.url }}">{{ post.title }}</a> <span>({{ post.date | date_to_long_string }})</span></li>
     {% endfor %}
 </ul>
 
