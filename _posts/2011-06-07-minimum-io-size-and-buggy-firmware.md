@@ -20,10 +20,10 @@ In such a case each unaligned I/O operation requested by the OS would cause the 
 
 That is why it has been finally agreed, that instead of building error-prone and extremely complicated kludges into the firmware, it makes much more sense to expose the information about the preferred sector sizes and alignment to the OS and propagate it to the upper layers such that partitioning, file system creation tools, etc. would be aware of it.
 
-One way or another, the Linux I/O stack (starting from Linux >= 2.6.31) has been enhanced to consume vendor-provided information about the I/O limits that allows Linux tools (parted, lvm, mkfs.*, etc.) to optimize the placement of and access to the data [1] (see also [2] for other very interesting documents regarding this issue).
+One way or another, the Linux I/O stack (starting from Linux >= 2.6.31) has been enhanced to consume vendor-provided information about the I/O limits [ms-1] that allows Linux tools (parted, lvm, mkfs.\*, etc.) to optimize the placement of and access to the data (see also [ms-2] for other very interesting documents regarding this issue).
 
-[1]: http://people.redhat.com/msnitzer/docs/io-limits.txt "I/O Limits: block sizes, alignment and I/O hints"
-[2]: http://people.redhat.com/msnitzer/docs/ "Home page of Mike Snitzer, Red Hat"
+[ms-1]: http://people.redhat.com/msnitzer/docs/io-limits.txt "I/O Limits: block sizes, alignment and I/O hints"
+[ms-2]: http://people.redhat.com/msnitzer/docs/ "Home page of Mike Snitzer, Red Hat"
 
 The buggy SSD firmware vs. minimum_io_size
 ------------------------------------------
@@ -36,9 +36,9 @@ Therefore, it is not surprising at all, that right after partitioning the disk a
 
 A more careful investigation revealed, however, that `mkfs` is just doing its job: the underlying `minimum_io_size` hint (8K) gets propagated upwards and so it creates a file system with a 8K block size without hesitation.
 
-However, in order for `mount` to be able to mount the file system, the block size should be <= kernel page size (which is 4K on x86_64 under normal conditions) [1]. Hence, the file system can be created, but not used.
+However, in order for `mount` to be able to mount the file system, the block size should be <= kernel page size (which is 4K on x86_64 under normal conditions) [lkml-1]. Hence, the file system can be created, but not used.
 
-[1]: http://lkml.org/lkml/2006/9/8/4
+[lkml-1]: http://lkml.org/lkml/2006/9/8/4
 
 Now that this has been figured out, all it takes is to find a firmware update to version `CD3Q` and magically all is well again... However, if you haven't been previously exposed to I/O limits-related issues, would you be able to make any sense out of the mysterious `EXT4-fs: bad block size 8192` messages in `dmesg`?
 
