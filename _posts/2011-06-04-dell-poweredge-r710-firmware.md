@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Updating firmware on Dell PowerEdge R710
+title: Updating firmware on Dell PowerEdge R710
 ---
 
 Introduction
@@ -12,20 +12,26 @@ Moreover, it seems that there is no comprehensive checklist regarding the firmwa
 
 Let us consider a case of a Dell PowerEdge R710 featuring 2 x 2T hard drives and a 100G solid state drive, equipped with an iDRAC 6 Enterprise remote access card. There are generally several avenues that one might take to update the server firmware:
 
-*   iDRAC firmware update facility (limited to the firmware of the DRAC itself and the USC, Dell Universal Server Configurator / Lifecycle Controller [1]), which requires manually downloaded firmware update (or repair) packages
+*   iDRAC firmware update facility (limited to the firmware of the DRAC itself and the USC, Dell Universal Server Configurator / Lifecycle Controller [dell-1]), which requires manually downloaded firmware update (or repair) packages
+ 
 *   Dell USC / LC, which is an UEFI based software that is able to update almost all firmwares of the devices that are present in the server using a number of possible sources of updates:
-    - Dell FTP site [2], in which case at least one of the network interface cards present in the system has to be configured from within USC, so that the server would be able to access external resources directly or via a proxy server
-    - Special USB media prepared beforehand using a software called Dell Repository Manager [3], which needs to be deployed to a Windows management PC
-    - Dell OpenManage Server Update Utility [4], which is a DVD image containing a comprehensive collection of firmware updates; in some sense, the USB media produced by the Repository Manager are subsets of SUU specific to each particular server
-*    Dell Systems Management Tools and Documentation all-in-one DVD [5], which contains the whole suite of OpenManage-branded Dell systems management software (OMSA, SBUU, SSDT and ITA)
-*    Dell Update Packages (DUPs), which are accessible from the download pages for each specific Dell server [6]; the right download page can be found by entering the service tag (unique server family identifier, which can be found in the DRAC interface or USC among other sources)
+ 
+    -   Dell FTP site [dell-2], in which case at least one of the network interface cards present in the system has to be configured from within USC, so that the server would be able to access external resources directly or via a proxy server
+    
+    -   Special USB media prepared beforehand using a software called Dell Repository Manager [dell-3], which needs to be deployed to a Windows management PC
+    
+    -   Dell OpenManage Server Update Utility [dell-4], which is a DVD image containing a comprehensive collection of firmware updates; in some sense, the USB media produced by the Repository Manager are subsets of SUU specific to each particular server
+ 
+*   Dell Systems Management Tools and Documentation all-in-one DVD [dell-5], which contains the whole suite of OpenManage-branded Dell systems management software (OMSA, SBUU, SSDT and ITA)
+ 
+*   Dell Update Packages (DUPs), which are accessible from the download pages for each specific Dell server [dell-6]; the right download page can be found by entering the service tag (unique server family identifier, which can be found in the DRAC interface or USC among other sources)
 
-[1]: http://support.dell.com/support/edocs/software/smusc/
-[2]: ftp://ftp.dell.com
-[3]: http://support.dell.com/support/edocs/SOFTWARE/smdrm/
-[4]: http://support.dell.com/support/edocs/software/smsuu/
-[5]: http://support.dell.com/support/edocs/software/smsom/
-[6]: http://support.dell.com/
+[dell-1]: http://support.dell.com/support/edocs/software/smusc/
+[dell-2]: ftp://ftp.dell.com
+[dell-3]: http://support.dell.com/support/edocs/SOFTWARE/smdrm/
+[dell-4]: http://support.dell.com/support/edocs/software/smsuu/
+[dell-5]: http://support.dell.com/support/edocs/software/smsom/
+[dell-6]: http://support.dell.com/
 
 A rather complete (but possibly not exhaustive) list of components that might require updates is as follows:
 
@@ -49,9 +55,9 @@ Updating the DRAC firmware should be the first step to updating anything else, e
 
 It is preferable to turn off the server and perform the update from the DRAC management console (iDRAC Settings | Update | Upload). The update package has to be downloaded manually from the server support and drivers home page at Dell.
 
-Additionally, iDRAC is able to re-flash USC / LC using USC repair packages [1] in the case if it was hosed during the update. It is generally not recommended by Dell and considered to be a last-resort action, but I have found it to be the only reliable way of updating the USC.
+Additionally, iDRAC is able to re-flash USC / LC using USC repair packages [lc-1] in the case if it was hosed during the update. It is generally not recommended by Dell and considered to be a last-resort action, but I have found it to be the only reliable way of updating the USC.
 
-[1]: ftp://ftp.dell.com/LifecycleController/
+[lc-1]: ftp://ftp.dell.com/LifecycleController/
 
 ### Dell USC / LC Platform Update
 
@@ -75,16 +81,16 @@ It is worth to note, that SUU generally contains most outdated firmware out ther
 
 DUPs are listed last, because they are expected to be run from a production operating system. Some DUPs, however, contain an ISO generator to create a bootable image which does not require an operating system to be installed, but it is not always the case.
 
-Dell normally provides DUPs on the server support pages for Windows and Linux or upon request. There is a community-supported repository [1] with DUPs wrapped around with native Linux packages, however, it is not officially endorsed or supported.
+Dell normally provides DUPs on the server support pages for Windows and Linux or upon request. There is a community-supported repository [dell-linux] with DUPs wrapped around with native Linux packages, however, it is not officially endorsed or supported.
 
-[1]: http://linux.dell.com/wiki/index.php/Repository
+[dell-linux]: http://linux.dell.com/wiki/index.php/Repository
 
 Conclusion
 ----------
 
-It is worth to note, that some updates (even critical ones!) are only available in form of DUPs, i.e. for the SSD devices and not even referenced from server support pages. In such cases, one needs to search Dell support website [1] using the model or serial number as the keyword.
+It is worth to note, that some updates (even critical ones!) are only available in form of DUPs, i.e. for the SSD devices and not even referenced from server support pages. In such cases, one needs to search Dell support website [dell-support] using the model or serial number as the keyword.
 
-[1]: http://support.dell.com/
+[dell-support]: http://support.dell.com/
 
 These updates are not to be neglected as for instance a recent critical SSD update was to fix the minimum advertised I/O block size.
 
