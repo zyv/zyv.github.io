@@ -22,10 +22,11 @@ In such a case each unaligned I/O operation requested by the OS would cause the 
 
 That is why it has been finally agreed, that instead of building error-prone and extremely complicated kludges into the firmware, it makes much more sense to expose the information about the preferred sector sizes and alignment to the OS and propagate it to the upper layers such that partitioning, file system creation tools, etc. would be aware of it.
 
-One way or another, the Linux I/O stack (starting from Linux >= 2.6.31) has been enhanced to consume vendor-provided information about the I/O limits [ms-1] that allows Linux tools (parted, lvm, mkfs.\*, etc.) to optimize the placement of and access to the data (see also [ms-2] for other very interesting documents regarding this issue).
+One way or another, the Linux I/O stack (starting from Linux >= 2.6.31) has been enhanced to consume vendor-provided information about the I/O limits [ms-1] that allows Linux tools (parted, lvm, mkfs.\*, etc.) to optimize the placement of and access to the data (see also [ms-2] for other very interesting documents regarding this issue). Also, be sure to check out a very interesting article by Tejun Heo [ko] regarding the sector size issues in general (thanks to Slyfox for the link).
 
 [ms-1]: http://people.redhat.com/msnitzer/docs/io-limits.txt "I/O Limits: block sizes, alignment and I/O hints"
 [ms-2]: http://people.redhat.com/msnitzer/docs/ "Home page of Mike Snitzer, Red Hat"
+[ko]: https://ata.wiki.kernel.org/index.php/ATA_4_KiB_sector_issues "ATA pages @ kernel.org wiki"
 
 The buggy SSD firmware vs. minimum_io_size
 ------------------------------------------
