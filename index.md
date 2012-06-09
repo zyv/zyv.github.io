@@ -6,7 +6,13 @@ title: Dipl. Phys. Yury V. Zaytsev
 Dipl. Phys. Yury V. Zaytsev
 ===========================
 
-I am working on a doctorate in computational neurosciences, graduated from a physics department and have spent most of my conscious life doing computer science.
+<blockquote>
+<p>Il n'y a pas de plus profonde solitude que celle de samouraï si ce n'est celle d'un tigre dans la jungle... peut-être...</p>
+
+<p align="right">Le Bushido</p>
+</blockquote>
+
+I was born in USSR, majored in radiophysics, am now working on a doctorate in computational neurosciences and have spent most of my conscious life doing computer science.
 
 The views expressed on this page are entirely of my own and do not reflect the official position of my employer, relatives, acquaintances et cetera.
 
@@ -31,7 +37,7 @@ The views expressed on this page are entirely of my own and do not reflect the o
 Credits
 -------
 
-I would like to acknowledge the use of the following entities, being instrumental in creation of this page:
+I would like to acknowledge the use of the following entities, being instrumental in creation of this webpage:
 
 - [Git][1]
 - [Jekyll][2]
@@ -39,4 +45,4 @@ I would like to acknowledge the use of the following entities, being instrumenta
 
 [1]: http://git-scm.com "Git rules!"
 [2]: http://jekyllrb.com "Jekyll is cool, even though Ruby is not my cup of tea"
-[3]: http://en.wikipedia.org/wiki/Human_brain "Something that I should probably exercise more"
+[3]: http://en.wikipedia.org/wiki/Human_brain "Something that I should probably exercise more often"

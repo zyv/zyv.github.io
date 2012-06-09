@@ -52,6 +52,10 @@ ul.posts-list span {
     color: #B0B0B0;
 }
 
+.content blockquote {
+    padding-left: 20em;
+}
+
 .feed-link {
     background: url(/images/feed-icon-28x28.png) no-repeat left;
 }
