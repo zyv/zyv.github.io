@@ -12,7 +12,12 @@ Dr. rer. nat. Yury V. Zaytsev
 <p align="right">Le Bushido</p>
 </blockquote>
 
-I was born in USSR, majored in radiophysics, am now working on a doctorate in computational neurosciences and have spent most of my conscious life doing computer science.
+Born in USSR, I majored in Radiophysics at [Nizhny Novgorod State University][1] (Russia), obtained a doctorate in Computational Neurosciences from the [University of Freiburg][2] (Germany), now work as a senior software developer in data processing at [TravelTainment GmbH][3] (the [Amadeus][4] leisure group) and have spent most of my conscious life pursuing a passion for _computing_.
+
+[1]: http://www.unn.ru/eng/
+[2]: http://www.uni-freiburg.de
+[3]: http://www.traveltainment.de
+[4]: http://www.amadeus.com
 
 The views expressed on this page are entirely of my own and do not reflect the official position of my employer, relatives, acquaintances et cetera.
 
@@ -45,4 +50,4 @@ I would like to acknowledge the use of the following entities, being instrumenta
 
 [1]: http://git-scm.com "Git rules!"
 [2]: http://jekyllrb.com "Jekyll is cool, even though Ruby is not my cup of tea"
-[3]: http://en.wikipedia.org/wiki/Human_brain "Something that I should probably exercise more often"
+[3]: http://en.wikipedia.org/wiki/Human_brain "An organ that I should probably exercise ever more often"
