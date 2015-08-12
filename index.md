@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Dipl. Phys. Yury V. Zaytsev
+title: Dr. rer. nat. Yury V. Zaytsev
 ---
 
-Dipl. Phys. Yury V. Zaytsev
-===========================
+Dr. rer. nat. Yury V. Zaytsev
+=============================
 
 <blockquote>
 <p>Il n'y a pas de plus profonde solitude que celle de samouraï si ce n'est celle d'un tigre dans la jungle... peut-être...</p>
