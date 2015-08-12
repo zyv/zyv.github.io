@@ -12,12 +12,12 @@ Dr. rer. nat. Yury V. Zaytsev
 <p align="right">Le Bushido</p>
 </blockquote>
 
-Born in USSR, I majored in Radiophysics at [Nizhny Novgorod State University][1] (Russia), obtained a doctorate in Computational Neurosciences from the [University of Freiburg][2] (Germany), now work as a senior software developer in data processing at [TravelTainment GmbH][3] (the [Amadeus][4] leisure group) and have spent most of my conscious life pursuing a passion for _computing_.
+Born in USSR, I majored in Radiophysics at [Nizhny Novgorod State University][nnsu] (Russia), obtained a doctorate in Computational Neurosciences from the [University of Freiburg][alu] (Germany), now working as a senior software developer in data processing at [TravelTainment GmbH][tt] (the [Amadeus][ama] leisure group) and have spent most of my conscious life pursuing a passion for _computing_.
 
-[1]: http://www.unn.ru/eng/
-[2]: http://www.uni-freiburg.de
-[3]: http://www.traveltainment.de
-[4]: http://www.amadeus.com
+[nnsu]: http://www.unn.ru/eng/
+[alu]: http://www.uni-freiburg.de
+[tt]: http://www.traveltainment.de
+[ama]: http://www.amadeus.com
 
 The views expressed on this page are entirely of my own and do not reflect the official position of my employer, relatives, acquaintances et cetera.
 
