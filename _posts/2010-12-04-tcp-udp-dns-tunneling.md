@@ -82,7 +82,7 @@ Here are the assorted things that I've learned over the past couple of days:
         sudo nmap -A host.tld
         sudo nmap -O host.tld
 
-* Nice ~/.ssh/config to use with tcp-over-dns (commented part is for DNSCat)... Enjoy a SOCKS5 proxy server on localhost:888.
+* Nice ~/.ssh/config to use with tcp-over-dns (commented part is for DNSCat)... Enjoy a SOCKS5 proxy server on localhost:8888.
 
         Host tunnel
           HostName localhost
