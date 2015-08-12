@@ -68,8 +68,8 @@ To be described. Refer to Blastwave. Provide some references, e.g. to Cuddletech
 Conclusion
 ----------
 
-Overall, the firmware upgrade process went smoothly and is not nearly as scary as it sounds. However, few issues, such as the difficulty to find the patch and inability to use previously installed system to perform the upgrade required to perform some prior research first.
+Overall, the firmware upgrade process went smoothly and is not nearly as scary as it sounds. However, few issues, such as the difficulty to find the patch and inability to use previously installed system to perform the upgrade made it necessary to do some prior research.
 
-Solaris 10 installation went extremely smoothly and left feelings of mixed sorrow and joy. Even though I did the mistake of not pre-allocating space for the ZFS database and online upgrades, I probably will not need them anytime soon, so overall it seemed to be too easy to not have a catch.
+Solaris 10 installation went extremely smoothly and left feelings of mixed joy and sorrow. Even though I did the mistake of not pre-allocating space for the ZFS database and online upgrades, I probably will not need them anytime soon, so overall it seemed to be too easy to not have a catch.
 
 
