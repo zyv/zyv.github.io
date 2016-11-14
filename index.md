@@ -12,12 +12,13 @@ Dr. rer. nat. Yury V. Zaytsev
 <p align="right">Le Bushido</p>
 </blockquote>
 
-Born in USSR, I majored in Radiophysics at [Nizhny Novgorod State University][nnsu] (Russia), obtained a doctorate in Computational Neurosciences from the [University of Freiburg][alu] (Germany), now working as a senior software developer in data processing at [TravelTainment GmbH][tt] (the [Amadeus][ama] leisure group) and have spent most of my conscious life pursuing a passion for _computing_.
+I was born and lived in USSR, majored in Radiophysics at [Nizhny Novgorod State University][nnsu] (Russia), obtained a doctorate in Computational Neuroscience from the [University of Freiburg][alu] (Germany), and have spent most of my conscious life pursuing a passion for _computing_. After a few years of rocking the boat at [Traveltainment GmbH][tt] (an [Amadeus][ama] company) as a senior software developer in data processing, I've joined [an exciting fintech startup][mm] as a software architect & technical lead.
 
 [nnsu]: http://www.unn.ru/eng/
 [alu]: http://www.uni-freiburg.de
 [tt]: http://www.traveltainment.de
 [ama]: http://www.amadeus.com
+[mm]: http://www.moneymeets.com
 
 The views expressed on this page are entirely of my own and do not reflect the official position of my employer, relatives, acquaintances et cetera.
 
@@ -50,4 +51,4 @@ I would like to acknowledge the use of the following entities, being instrumenta
 
 [1]: http://git-scm.com "Git rules!"
 [2]: http://jekyllrb.com "Jekyll is cool, even though Ruby is not my cup of tea"
-[3]: http://en.wikipedia.org/wiki/Human_brain "An organ that I should probably exercise ever more often"
+[3]: http://en.wikipedia.org/wiki/Human_brain "An organ that I should probably exercise more often"
