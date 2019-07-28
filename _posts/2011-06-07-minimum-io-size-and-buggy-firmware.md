@@ -1,9 +1,13 @@
 ---
 layout: post
-title: Who framed mkfs? or Winners never cheat and cheaters never win
+title: Who framed mkfs?
 categories:
 - tech
 ---
+
+<blockquote>
+ Winners never cheat, and cheaters never win
+</blockquote>
 
 I/O Limits: Quest for increased drive capacity
 ----------------------------------------------
