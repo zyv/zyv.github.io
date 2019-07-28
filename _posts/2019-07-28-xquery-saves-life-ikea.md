@@ -13,7 +13,9 @@ A couple of days ago I was confronted with an unpleasant discovery in bed, which
 Moreover, in spite of an overwhelming multitude of products available for purchase, one can apply a simple set of criteria, which would invariably lead to an optimal solution to this otherwise _NP_-hard problem:
 
   * Assuming that the price is still any indicator of quality in our post-modern world, products should be sorted by price, descending
+  
   * Products should be filtered by type and grouped by family, allowing for colour and design variations to be easily assessed
+  
   * Designs featuring variegated colouring of any kind or anathematic striping patterns should be immediately discarded from consideration
 
 The rest should _purely_ amount to `map buy $ take 2 products`.
