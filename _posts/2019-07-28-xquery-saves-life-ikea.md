@@ -144,7 +144,9 @@ Now, this does look like something meaningful:
 </Results>
 ```
 
-After dumping the whole DOM to file and some more fiddling with XQuery, the fog of war finally starts clearing up! By now it is pretty obvious that I need a PUDERVIVA or SÖMNTUTA (actually, one of each to be on the safe side), as well as one SÄCKBUSKE to match PUDERVIVA with a backup BRUNKRISSLA to match SÖMNTUTA.
+After dumping the whole DOM to file and some more fiddling with XQuery, the fog of war finally starts clearing up!
+
+By now it is pretty obvious that I need a PUDERVIVA or SÖMNTUTA (actually, one of each to be on the safe side), as well as one SÄCKBUSKE to match PUDERVIVA with a backup BRUNKRISSLA to match SÖMNTUTA.
 
 Relieved by the situation returning under control, let us apply the same procedure to other kinds of household textiles. How about buying a bunch of BINNAN towels as well while we are at it?
 
