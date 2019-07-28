@@ -8,7 +8,7 @@ categories:
 
 A couple of days ago I was confronted with an unpleasant discovery in bed, which once again has made me acutely aware of the frailty of life. Specifically, I was looking at a glaring hole in my soon to be a decade old bed sheets.
 
-"How annoying!" I thought, being presented with a very tangible physical problem, which cannot be immediately solved with an elegant one-liner shell script... Oh, wait! In this day and age IKEA must certainly have an online shop, so I could just pick a new set of linen and get it shipped to my doorstep.
+"How annoying!" I thought, being presented with a very tangible physical problem, which cannot be immediately solved with an elegant one-liner shell script... Oh, wait! In this day and age IKEA must assuredly have an online shop, so I could just pick a new set of linen and get it shipped to my doorstep.
 
 Moreover, in spite of an overwhelming multitude of products available for purchase, one can apply a simple set of criteria, which would invariably lead to an optimal solution to this otherwise _NP_-hard problem:
 
@@ -24,7 +24,9 @@ Sure enough, however, this quickly turned out to be one of those brilliant plans
 
 An enterprising adventurer who chances to look for sheets on the [IKEA website](https://www.ikea.com/de/de/cat/bettwaesche-tl004/) is immediately confronted with the lack of basic hygiene facilities like sorting by price, not even speaking of filtering by type. The products are displayed in a seemingly random order, which precludes any organised attempts to make sense of what design variations are available for a particular type.
 
-Fortunately, no amount of corporate cargo-agile website-building idiocy can dissuade a determined hacker on the verge of perdition from buying new bedding. They must have an API, which can be queried to obtain a list of products, so that one can hack up a [JMESPath](http://jmespath.org) expression and be done with it, right? **Wrong!** They do have one indeed, but it is one of those special [dangerous street APIs](https://www.youtube.com/watch?v=wTqsV3q7rRU) returning pre-rendered HTML snippets, which you are supposed to shove up your DOM.
+Fortunately, no amount of corporate cargo-agile website-building idiocy can dissuade a determined hacker on the verge of perdition from buying new bedding. Some way out has to be out there, has it not?
+
+They must certainly have an API, which can be queried to obtain a list of products, so that one can hack up a [JMESPath](http://jmespath.org) expression and be done with it, right? **Wrong!** They do have one indeed, but it is one of those special [dangerous street APIs](https://www.youtube.com/watch?v=wTqsV3q7rRU) returning pre-rendered HTML snippets, which you are supposed to shove up your DOM.
 
 Here is the kind of sodomy that one would typically have to deal with:
 
