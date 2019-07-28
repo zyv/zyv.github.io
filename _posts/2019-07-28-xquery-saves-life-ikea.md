@@ -156,4 +156,4 @@ Relieved by the situation returning under control, let us apply the same procedu
 
 I am very impressed by the fact that although the same results could have been achieved by hacking together a throw-away Python script leveraging `lxml`, in this case, it is pretty clear indeed, that nothing matches the fun, power and elegance of XQuery.
 
-Thanks to Hans-Juergen Rennau for giving me a glimpse into this   wondrous world years aback!
+Thanks to Hans-Jürgen Rennau for giving me a glimpse into this   wondrous world years aback!
