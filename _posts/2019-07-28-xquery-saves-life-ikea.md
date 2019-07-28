@@ -60,7 +60,7 @@ zaytsev:~ zaytsev$ brew install basex
 zaytsev:~ zaytsev$ basexgui
 ```
 
-```xquery
+```xml
 declare variable $doc := html:parse(fetch:binary('https://www.ikea.com/de/de/cat/bettwaesche-10651/'));
  
 (: declare variable $typeFilter := ''; :)
