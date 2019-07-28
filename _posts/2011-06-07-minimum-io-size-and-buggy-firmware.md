@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Who framed mkfs? or Winners never cheat and cheaters never win
+title: Who framed mkfs?
 categories:
 - tech
 ---
@@ -45,5 +45,5 @@ However, in order for `mount` to be able to mount the file system, the block siz
 
 Now that this has been figured out, all it takes is to find a firmware update to version `CD3Q` and magically all is well again... However, if you haven't been previously exposed to I/O limits-related issues, would you be able to make any sense out of the mysterious `EXT4-fs: bad block size 8192` messages in `dmesg`?
 
-As an exercise for the readers, now forget everything that you have recollected so far and try to read the post backwards!
+As an exercise for the readers, now forget everything that you have recollected so far and try to read the post backwards... and remember, winners never cheat, and cheaters never win!
 
