@@ -56,7 +56,7 @@ Possible firmware update procedures
 
 Updating the DRAC firmware should be the first step to updating anything else, especially in the case of a restricted onsite presence / remote hands availability. During the update, the DRAC might become unavailable for a period of time up to 15 minutes; this is normal and expected.
 
-It is preferable to turn off the server and perform the update from the DRAC management console (iDRAC Settings | Update | Upload). The update package has to be downloaded manually from the server support and drivers home page at Dell.
+It is preferable to turn off the server and perform the update from the DRAC management console (iDRAC Settings → Update → Upload). The update package has to be downloaded manually from the server support and drivers home page at Dell.
 
 Additionally, iDRAC is able to re-flash USC / LC using USC repair packages [lc-1] in the case if it was hosed during the update. It is generally not recommended by Dell and considered to be a last-resort action, but I have found it to be the only reliable way of updating the USC.
 
