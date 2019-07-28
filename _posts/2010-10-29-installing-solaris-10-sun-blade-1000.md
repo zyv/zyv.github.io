@@ -43,18 +43,20 @@ Reboot the machine and after inserting the CD and type the following to boot fro
 
 The CD will spin up and after some time you will be presented with the login screen. Log into the system as user `alex` with password `alex`. Become root through `su -` with password `root`. Time to set the networking up and fetch the update:
 
-    # ifconfig eri0 down
-    # ifconfig eri0 192.168.0.1 netmask 255.255.255.0 up
-    # route add default 192.168.0.254
-    # cat > /etc/resolv.conf
-        nameserver 192.168.0.254
-        ...
-        Ctrl+D
-    # wget http://server.lan/flash-update-Blade1000-latest
-    # wget http://server.lan/flash-update-Blade1000-old
-    # wget http://server.lan/unix.flash-update.SunBlade1000.sh
-    # chmod +x unix.flash-update.SunBlade1000.sh
-    # ./unix.flash-update.SunBlade1000.sh
+```console
+# ifconfig eri0 down
+# ifconfig eri0 192.168.0.1 netmask 255.255.255.0 up
+# route add default 192.168.0.254
+# cat > /etc/resolv.conf
+    nameserver 192.168.0.254
+    ...
+    Ctrl+D
+# wget http://server.lan/flash-update-Blade1000-latest
+# wget http://server.lan/flash-update-Blade1000-old
+# wget http://server.lan/unix.flash-update.SunBlade1000.sh
+# chmod +x unix.flash-update.SunBlade1000.sh
+# ./unix.flash-update.SunBlade1000.sh
+```
 
 Answer `yes` and keep the fingers crossed; the magic will happen and the machine will reboot itself when the update is completed.
 
