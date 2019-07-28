@@ -52,7 +52,9 @@ Here is the kind of sodomy that one would typically have to deal with:
 </div>
 ```
 
-Challenge accepted!™ Let us fire up BaseX and [put the impertinent Swedes back in check](https://en.wikipedia.org/wiki/Battle_of_the_Neva) by obtaining some actionable insights from their ~~Big~~^WGarbage Data:
+Challenge accepted!™
+
+Let us fire up BaseX and [put the impertinent Swedes back in check](https://en.wikipedia.org/wiki/Battle_of_the_Neva) by obtaining some actionable insights® from their ~~Big~~^WGarbage Data:
 
 ```console
 zaytsev:~ zaytsev$ brew cask install adoptopenjdk
@@ -116,7 +118,7 @@ return
   </Results>
 ```
 
-Now, this does look like something meaningful:
+Now, this starts making some sense, yay!
 
 ```xml
 <Results filtered-products="12" filtered-items="22" total-items="24">
