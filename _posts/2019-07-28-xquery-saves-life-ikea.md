@@ -60,6 +60,8 @@ zaytsev:~ zaytsev$ brew install basex
 zaytsev:~ zaytsev$ basexgui
 ```
 
+Hack, hack, hack!
+
 ```xml
 declare variable $doc := html:parse(fetch:binary('https://www.ikea.com/de/de/cat/bettwaesche-10651/'));
  
