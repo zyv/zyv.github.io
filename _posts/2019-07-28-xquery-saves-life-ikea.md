@@ -24,7 +24,7 @@ Sure enough, however, this quickly turned out to be one of those brilliant plans
 
 An enterprising adventurer who chances to look for sheets on the [IKEA website](https://www.ikea.com/de/de/cat/bettwaesche-tl004/) is immediately confronted with the lack of basic hygiene facilities like sorting by price, not even speaking of filtering by type. The products are displayed in a seemingly random order, which precludes any organised attempts to make sense of what design variations are available for a particular type.
 
-Fortunately, no amount of corporate cargo-agile website-building idiocy can dissuade a determined hacker on the verge of perdition from buying new bedding. Some way out has to be out there, has it not?
+Fortunately, no amount of corporate cargo-agile website-building idiocy can dissuade a determined hacker on the verge of perdition from buying new bedding. Some way out just has to be out there, has it not?
 
 They must certainly have an API, which can be queried to obtain a list of products, so that one can hack up a [JMESPath](http://jmespath.org) expression and be done with it, right? **Wrong!** They do have one indeed, but it is one of those special [dangerous street APIs](https://www.youtube.com/watch?v=wTqsV3q7rRU) returning pre-rendered HTML snippets, which you are supposed to shove up your DOM.
 
