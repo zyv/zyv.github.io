@@ -16,7 +16,7 @@ body {
              "Liberation Serif",
              serif;
 
-    font-size: 18pt;
+    font-size: 16pt;
 
 }
 
@@ -39,7 +39,7 @@ a {
 }
 
 .content {
-    width: 37em;
+    width: 35em;
     margin: auto;
 }
 
