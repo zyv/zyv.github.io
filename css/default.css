@@ -7,9 +7,6 @@ html, body, ul, ol, li, form, fieldset, legend {
 
 body {
 
-    /*
-    http://www.codestyle.org/servlets/FontStack?stack=Times+New+Roman%2CNimbus+Roman+No9+L%2CTimes%2CLiberation+Serif&generic=serif&x=4&y=7
-    */
     font-family: "Times New Roman",
             "Nimbus Roman No9 L",
              Times,
@@ -22,9 +19,6 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 
-    /*
-    http://www.codestyle.org/servlets/FontStack?stack=Palatino%20Linotype,Palatino,Book%20Antiqua,URW%20Palladio%20L,Georgia&generic=serif
-    */
     font-family: "Palatino Linotype",
              Palatino,
              "Book Antiqua",
