@@ -39,7 +39,7 @@ a {
 }
 
 .content {
-    width: 35em;
+    width: 32em;
     margin: auto;
 }
 
@@ -57,7 +57,7 @@ ul.posts-list span {
 }
 
 .content blockquote {
-    padding-left: 16em;
+    padding-left: 13em;
 }
 
 .feed-link {
