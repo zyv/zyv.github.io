@@ -18,14 +18,16 @@ In order to solve the first problem, one would need to apply certain configurati
 
 One can conveniently apply a bunch of configuration options to specific accounts using the `Match` directive available in the latest versions of the OpenSSH server:
 
-    Match user badguy
-        AllowTcpForwarding no
-        X11Forwarding no
-        ChrootDirectory /srv/sftp
-        ForceCommand internal-sftp
+```
+Match user badguy
+    AllowTcpForwarding no
+    X11Forwarding no
+    ChrootDirectory /srv/sftp
+    ForceCommand internal-sftp
     
-    Match group sftponly
-        ...
+Match group sftponly
+    ...
+```
 
 However, this directive is only included in OpenSSH 5.x and above, whereas Red Hat Enterprise Linux 5 ships with OpenSSH 4.x. Therefore, an alternative approach will be outlined below.
 
@@ -44,147 +46,155 @@ Since `Match` directive is unavailable and the installation of extra unsupported
 
 First, let us create an `init` script, which is a straightforward modification of the stock `init` script supplied by Red Hat:
 
-    root@box # cat > /etc/rc.d/init.d/sshd-sftponly
-    #!/bin/bash
-    #
-    # Init file for SFTP-only OpenSSH server daemon
-    #
-    # chkconfig: 2345 55 25
-    # description: SFTP-only OpenSSH server daemon
-    #
-    # processname: sshd-sftponly
-    # config: /etc/ssh/ssh_host_key
-    # config: /etc/ssh/ssh_host_key.pub
-    # config: /etc/ssh/ssh_random_seed
-    # config: /etc/ssh/sshd_config-sftponly
-    # pidfile: /var/run/sshd-sftponly.pid
-    
-    # source function library
-    . /etc/rc.d/init.d/functions
-    
-    RETVAL=0
-    prog="sshd-sftponly"
-    
-    # Some functions to make the below more readable
-    SSHD=/usr/sbin/sshd-sftponly
-    PID_FILE=/var/run/sshd-sftponly.pid
-    
-    # ZYV
-    LOCK_FILE=/var/lock/subsys/sshd-sftponly
-    OPTIONS=" -f /etc/ssh/sshd_config-sftponly "
-    
-    runlevel=$(set -- $(runlevel); eval "echo \$$#" )
-    
-    start()
-    {
-        cp -af /etc/localtime /var/empty/sshd/etc
-    
-        echo -n $"Starting $prog: "
-        $SSHD $OPTIONS && success || failure
-        RETVAL=$?
-        [ "$RETVAL" = 0 ] && touch $LOCK_FILE
-        echo
-    }
-    
-    stop()
-    {
-        echo -n $"Stopping $prog: "
-        if [ -n "`pidfileofproc $SSHD`" ] ; then
-            killproc $SSHD
-        else
-            failure $"Stopping $prog"
-        fi
-        RETVAL=$?
-        # if we are in halt or reboot runlevel kill all running sessions
-        # so the TCP connections are closed cleanly
-        if [ "x$runlevel" = x0 -o "x$runlevel" = x6 ] ; then
-            killall $prog 2>/dev/null
-        fi
-        [ "$RETVAL" = 0 ] && rm -f $LOCK_FILE
-        echo
-    }
-    
-    reload()
-    {
-        echo -n $"Reloading $prog: "
-        if [ -n "`pidfileofproc $SSHD`" ] ; then
-            killproc $SSHD -HUP
-        else
-            failure $"Reloading $prog"
-        fi
-        RETVAL=$?
-        echo
-    }
-    
-    case "$1" in
-        start)
-            start
-            ;;
-        stop)
+```console
+root@box # cat > /etc/rc.d/init.d/sshd-sftponly
+#!/bin/bash
+#
+# Init file for SFTP-only OpenSSH server daemon
+#
+# chkconfig: 2345 55 25
+# description: SFTP-only OpenSSH server daemon
+#
+# processname: sshd-sftponly
+# config: /etc/ssh/ssh_host_key
+# config: /etc/ssh/ssh_host_key.pub
+# config: /etc/ssh/ssh_random_seed
+# config: /etc/ssh/sshd_config-sftponly
+# pidfile: /var/run/sshd-sftponly.pid
+
+# source function library
+. /etc/rc.d/init.d/functions
+
+RETVAL=0
+prog="sshd-sftponly"
+
+# Some functions to make the below more readable
+SSHD=/usr/sbin/sshd-sftponly
+PID_FILE=/var/run/sshd-sftponly.pid
+
+# ZYV
+LOCK_FILE=/var/lock/subsys/sshd-sftponly
+OPTIONS=" -f /etc/ssh/sshd_config-sftponly "
+
+runlevel=$(set -- $(runlevel); eval "echo \$$#" )
+
+start()
+{
+    cp -af /etc/localtime /var/empty/sshd/etc
+
+    echo -n $"Starting $prog: "
+    $SSHD $OPTIONS && success || failure
+    RETVAL=$?
+    [ "$RETVAL" = 0 ] && touch $LOCK_FILE
+    echo
+}
+
+stop()
+{
+    echo -n $"Stopping $prog: "
+    if [ -n "`pidfileofproc $SSHD`" ] ; then
+        killproc $SSHD
+    else
+        failure $"Stopping $prog"
+    fi
+    RETVAL=$?
+    # if we are in halt or reboot runlevel kill all running sessions
+    # so the TCP connections are closed cleanly
+    if [ "x$runlevel" = x0 -o "x$runlevel" = x6 ] ; then
+        killall $prog 2>/dev/null
+    fi
+    [ "$RETVAL" = 0 ] && rm -f $LOCK_FILE
+    echo
+}
+
+reload()
+{
+    echo -n $"Reloading $prog: "
+    if [ -n "`pidfileofproc $SSHD`" ] ; then
+        killproc $SSHD -HUP
+    else
+        failure $"Reloading $prog"
+    fi
+    RETVAL=$?
+    echo
+}
+
+case "$1" in
+    start)
+        start
+        ;;
+    stop)
+        stop
+        ;;
+    restart)
+        stop
+        start
+        ;;
+    reload)
+        reload
+        ;;
+    condrestart)
+        if [ -f $LOCK_FILE ] ; then
             stop
-            ;;
-        restart)
-            stop
+            # avoid race
+            sleep 3
             start
-            ;;
-        reload)
-            reload
-            ;;
-        condrestart)
-            if [ -f $LOCK_FILE ] ; then
-                stop
-                # avoid race
-                sleep 3
-                start
-            fi
-            ;;
-        status)
-            status -p $PID_FILE openssh-daemon
-            RETVAL=$?
-            ;;
-        *)
-            echo $"Usage: $0 {start|stop|restart|reload|condrestart|status}"
-            RETVAL=1
-    esac
-    exit $RETVAL
-    
-    CTRL+D
+        fi
+        ;;
+    status)
+        status -p $PID_FILE openssh-daemon
+        RETVAL=$?
+        ;;
+    *)
+        echo $"Usage: $0 {start|stop|restart|reload|condrestart|status}"
+        RETVAL=1
+esac
+exit $RETVAL
+
+CTRL+D
+```
 
 The configuration file would look as follows (not all directives are necessary, take into account the defaults of the distribution in use):
 
-    root@box # cat > /etc/ssh/sshd_config-sftponly
-    # ZYV
-    PasswordAuthentication no
-    PermitRootLogin no
-    PidFile /var/run/sshd-sftponly.pid
-    Port 2234
-    Protocol 2
-    UsePAM no
-    
-    Subsystem       sftp    internal-sftp
-    
-    ChrootDirectory /srv/sftp
-    AllowTcpForwarding no
-    X11Forwarding no
-    ForceCommand internal-sftp
-    
-    CTRL+D
+```console
+root@box # cat > /etc/ssh/sshd_config-sftponly
+# ZYV
+PasswordAuthentication no
+PermitRootLogin no
+PidFile /var/run/sshd-sftponly.pid
+Port 2234
+Protocol 2
+UsePAM no
+
+Subsystem       sftp    internal-sftp
+
+ChrootDirectory /srv/sftp
+AllowTcpForwarding no
+X11Forwarding no
+ForceCommand internal-sftp
+
+CTRL+D
+```
 
 It is important to turn off the use of PAM for authentication in which case `sshd-sftponly` will fall back to reading `/etc/passwd` and `/etc/shadow`, instead of using the pluggable authentication module definitions for authentication sources and methods. Otherwise, one would need to provide an additional PAM configuration file basing upon `/etc/pam.d/sshd` as a template for `sshd-sftponly`, however, it is clearly an overkill if no advanced authentication scheme (e.g. against LDAP) is required.
 
 Then, one needs to create a link to the `sshd` binary, register and start the service:
 
-    root@box # ln -s /usr/sbin/sshd /usr/sbin/sshd-sftponly
-    root@box # chkconfig --add sshd-sftponly
-    root@box # service sshd-sftponly start
+```console
+root@box # ln -s /usr/sbin/sshd /usr/sbin/sshd-sftponly
+root@box # chkconfig --add sshd-sftponly
+root@box # service sshd-sftponly start
+```
 
 ### Creating an SFTP-only user
 
 The next task would be to create a group for SFTP-only users and the users themselves:
 
-    root@box # groupadd sftponly
-    root@box # useradd badguy -g sftponly -s /sbin/nologin -m -K UMASK=0022
-    root@box # passwd badguy
+```console
+root@box # groupadd sftponly
+root@box # useradd badguy -g sftponly -s /sbin/nologin -m -K UMASK=0022
+root@box # passwd badguy
+```
 
 Here `-g` specifies the main group, `-s` sets the shell, `-m` creates the home directory from a skeleton and `-K` overrides the default options with regards to `umask` (optional).
 
@@ -192,30 +202,34 @@ It is important to set a strong password for the user (which can be immediately 
 
 Now it is necessary to set up the public key authentication:
 
-    badguy@foo:~$ ssh-keygen -t rsa -b 4096
+```console
+badguy@foo:~$ ssh-keygen -t rsa -b 4096
 
-    root@box # mkdir /home/badguy/.ssh
-    root@box # chmod 700 /home/badguy/.ssh
-    root@box # cat > /home/badguy/.ssh/authorized_keys
-    ...
-    CTRL+D
-    
-    root@box # chmod 600 /home/badguy/.ssh/authorized_keys
+root@box # mkdir /home/badguy/.ssh
+root@box # chmod 700 /home/badguy/.ssh
+root@box # cat > /home/badguy/.ssh/authorized_keys
+...
+CTRL+D
+
+root@box # chmod 600 /home/badguy/.ssh/authorized_keys
+```
 
 ### Creating a proper chroot
 
 In order to avoid potential privilege escalation, the chroot and all path components leading up to the chroot have to be owned and only writable by `root`. Additionally, it is necessary to hardlink the shell and some supporting libraries inside the chroot:
 
-    root@box # mkdir -p /srv/sftp/{home,lib,sbin}
-    root@box # mkdir /srv/sftp/home/badguy
-    
-    root@box # chown badguy:sftponly /srv/sftp/home/badguy
-    
-    root@box # ln /lib/ld-2.5.so /srv/sftp/lib
-    root@box # ln /lib/ld-linux.so.2 /srv/sftp/lib
-    root@box # ln /lib/libc-2.5.so /srv/sftp/lib
-    root@box # ln /lib/libc.so.6 /srv/sftp/lib
-    root@box # ln /sbin/nologin /srv/sftp/sbin
+```console
+root@box # mkdir -p /srv/sftp/{home,lib,sbin}
+root@box # mkdir /srv/sftp/home/badguy
+
+root@box # chown badguy:sftponly /srv/sftp/home/badguy
+
+root@box # ln /lib/ld-2.5.so /srv/sftp/lib
+root@box # ln /lib/ld-linux.so.2 /srv/sftp/lib
+root@box # ln /lib/libc-2.5.so /srv/sftp/lib
+root@box # ln /lib/libc.so.6 /srv/sftp/lib
+root@box # ln /sbin/nologin /srv/sftp/sbin
+```
 
 Luckily, the OpenSSH server will not allow to use a chroot with wrong permissions.
 
@@ -223,29 +237,33 @@ Luckily, the OpenSSH server will not allow to use a chroot with wrong permission
 
 Now it is time to set up a new host entry and try it out:
 
-    badguy@foo:~$ cat >> ~/.ssh/config
-    
-    Host box
-      HostName box.com
-      Compression yes
-      IdentityFile ~/.ssh/id_rsa
-      Port 2234
-      User badguy
-    
-    CTRL+D
-    
-    badguy@foo:~$ sftp box
+```console
+badguy@foo:~$ cat >> ~/.ssh/config
+
+Host box
+  HostName box.com
+  Compression yes
+  IdentityFile ~/.ssh/id_rsa
+  Port 2234
+  User badguy
+
+CTRL+D
+
+badguy@foo:~$ sftp box
+```
 
 Now all these amazing feats would be for nothing if one would not tell the standard `sshd` daemon to deny connections for SFTP-only users and it would happily let them in:
 
-    root@box # cat >> /etc/ssh/sshd_config
-    
-    # ZYV
-    DenyGroups sftponly
-    
-    CTRL+D
-    
-    root@box # service sshd restart
+```console
+root@box # cat >> /etc/ssh/sshd_config
+
+# ZYV
+DenyGroups sftponly
+
+CTRL+D
+
+root@box # service sshd restart
+```
 
 Conclusion
 ----------
