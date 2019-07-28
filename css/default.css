@@ -43,6 +43,10 @@ a {
     margin: auto;
 }
 
+pre {
+    font-size: smaller;
+}
+
 ul, ol {
     margin: 1em 0 1em 2em;
 }
